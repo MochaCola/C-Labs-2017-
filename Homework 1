@@ -1,0 +1,76 @@
+GasPumpH.h
+--------------
+
+using namespace std;
+
+class GasPump
+{
+public:
+	GasPump();
+
+	double getAmountDispensed();
+	double getCostPerGallon();
+	double getCharge();
+
+	void reset();
+	void start();
+	void stop();
+
+private:
+	double m_amountDispensed;
+	double m_costPerGallon;
+	double m_charge;
+};
+
+Implementation.cpp
+---------------------
+
+#include "GasPumpH.h"
+#include <cmath>
+#include <ctime>
+using namespace std;
+
+GasPump::GasPump()
+{
+	srand(time(0));
+	m_amountDispensed = 1.0 + rand() % (16.0 - 1.0 + 1);
+	m_costPerGallon = 2.5 + rand() % (3.0 - 2.5 + 1);
+	m_charge = (m_amountDispensed * m_costPerGallon);
+}
+double GasPump::getAmountDispensed()
+{
+	return m_amountDispensed;
+}
+double GasPump::getCostPerGallon()
+{
+	return m_costPerGallon;
+}
+double GasPump::getCharge()
+{
+	return m_charge;
+}
+void GasPump::reset()
+{
+	
+}
+void GasPump::start()
+{
+
+}
+void GasPump::stop()
+{
+
+}
+
+Main.cpp
+-----------
+
+#include "GasPumpH.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	return 0;
+}
